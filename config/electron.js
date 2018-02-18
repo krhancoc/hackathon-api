@@ -9,7 +9,7 @@ const variables = [
     name: "temperature",
     alerts: {
       less_than: -40,
-      more_than: 10
+      more_than: 40
     }
   },
   {

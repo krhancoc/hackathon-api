@@ -35,7 +35,8 @@
     "hapi-auth-jwt2": "^7.3.0",
     "hapi-pino": "^4.0.3",
     "mongodb": "^3.0.2",
-    "node-fetch": "^2.0.0"
+    "node-fetch": "^2.0.0",
+    "twilio": "^3.11.3"
   },
   "devDependencies": {
     "blipp": "^2.3.0",
