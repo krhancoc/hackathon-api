@@ -18,7 +18,22 @@ module.exports.full = {
         const col = client.db(dbName).collection(process.env.DEVICE_ID);
         col.find({}).sort({'time': -1}).limit(1).toArray(function (err, result) {
 
-          return reply(result).code(200);
+          if(typeof(request.query.react) !== 'undefined') {
+            const response = {}
+            response.time = result[0].time
+
+            for(let i in result[0].variables) {
+              let v = result[0].variables[i]
+              response[v.name] = {
+                alerts: v.alerts,
+                result: v.result
+              }
+            }
+            return reply(response).code(200);
+          } else {
+            return reply(result).code(200);
+          }
+
         });
       });
     } else {
